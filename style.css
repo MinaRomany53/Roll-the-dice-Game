@@ -1,0 +1,130 @@
+@import url(globalRules.css);
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  backdrop-filter: blur(200px); /******/
+  filter: blur(); /*****/
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  display: flex;
+  overflow: hidden;
+}
+.player {
+  flex-basis: 50%; /*try flex: 50%;*/
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+.player .name {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.player .score {
+  font-size: 8rem;
+  color: #c7365f;
+  font-weight: 300;
+  margin-bottom: auto; /*Nice i hadn't used it before*/
+}
+.player .current {
+  width: 65%;
+  padding: 2rem;
+  background-color: #c7365f;
+  color: #ddd;
+  text-align: center;
+  border-radius: 1rem;
+  opacity: 0.8;
+  transition: all 0.75s;
+}
+.current .current-label {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+.current .current-score {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+/* Start Player Active Class*/
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+  font-weight: bold;
+}
+.player--active .score {
+  font-weight: 400;
+}
+.player--active .current {
+  opacity: 1;
+}
+/* End Player Active Class*/
+
+/*Start Game Buttons (Position absloute elements)*/
+.btn {
+  position: absolute;
+  border: none;
+  font-family: inherit;
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  color: #444;
+  left: 50%;
+  transform: translatex(-50%);
+  transition: all 0.2s;
+}
+.btn:focus {
+  outline: none;
+}
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+.btn:active {
+  transform: translate(-50%, 4px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  bottom: 17rem;
+}
+.btn--hold {
+  bottom: 10rem;
+}
+.dice {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  left: 50%;
+  transform: translatex(-50%);
+  top: 16.5rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+/*End Game Buttons (Position absloute elements)*/
+
+/* Start Player Winner Class*/
+.player--winner {
+  background-color: #2f2f2f;
+}
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+/* End Player Winner Class*/

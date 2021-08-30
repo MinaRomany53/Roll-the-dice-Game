@@ -116,3 +116,5 @@ function isWin(score) {
   let check = true;
   return score >= 100 ? check : !check;
 }
+
+/*soo Badd*/
